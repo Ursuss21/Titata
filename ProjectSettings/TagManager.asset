@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -50,9 +51,12 @@ TagManager:
   - name: Doors
     uniqueID: 2195162859
     locked: 0
-  - name: Bullet
-    uniqueID: 3830476197
+  - name: Enemy
+    uniqueID: 3384597321
     locked: 0
   - name: Player
     uniqueID: 2254107145
+    locked: 0
+  - name: Bullet
+    uniqueID: 3830476197
     locked: 0
