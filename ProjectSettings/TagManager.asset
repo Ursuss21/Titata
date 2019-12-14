@@ -50,6 +50,9 @@ TagManager:
   - name: Doors
     uniqueID: 2195162859
     locked: 0
+  - name: Bullet
+    uniqueID: 3830476197
+    locked: 0
   - name: Player
     uniqueID: 2254107145
     locked: 0
