@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
         if(!chooseDirection){
             StartCoroutine(ChooseDirection());
         }
-        transform.position = -transform.right * speed * Time.deltaTime;
+        transform.position += -transform.right * speed * Time.deltaTime;
         if(IsPlayerInRange(range)){
             currentState = EnemyState.Follow;
         }
