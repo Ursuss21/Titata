@@ -18,7 +18,6 @@ public class EnemyController : MonoBehaviour
     public float attackRange;
     public float cooldown;
     private bool chooseDirection = false;
-    private bool dead = false;
     private bool cooldownAttack = false;
     private Vector3 randomDirection;
     

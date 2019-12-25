@@ -19,10 +19,10 @@ public class Room : MonoBehaviour
         this.y = y;
     }
 
-    public Door leftDoor;
-    public Door rightDoor;
-    public Door topDoor;
-    public Door bottomDoor;
+    [SerializeField] private Door leftDoor;
+    [SerializeField] private Door rightDoor;
+    [SerializeField] private Door topDoor;
+    [SerializeField] private Door bottomDoor;
     public List<Door> doors = new List<Door>();
     
     //Initialize room with its doors.

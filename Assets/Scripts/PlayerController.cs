@@ -5,18 +5,12 @@ public class PlayerController : MonoBehaviour
 {
     //Player speed.
     public float speed;
-    Rigidbody2D rigidbody;
     public Text collectedText;
     public static int collectedAmount = 0;
     public GameObject bulletPrefab;
     public float bulletSpeed;
     private float lastFire;
     public float fireDelay;
-    
-    void Start()
-    {
-        rigidbody = GetComponent<Rigidbody2D>();
-    }
 
     //Updates player position based on input.
     void Update()
@@ -32,7 +26,7 @@ public class PlayerController : MonoBehaviour
             lastFire = Time.time;
         }
 
-        rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+        GetComponent<Rigidbody2D>().velocity = new Vector3(horizontal * speed, vertical * speed, 0);
         collectedText.text = "Items collected: " + collectedAmount;
     }
 

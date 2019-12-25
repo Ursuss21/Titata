@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
     }
 
     public DoorType doorType;
-    public GameObject doorCollider;
+    [SerializeField] private GameObject doorCollider;
     private GameObject player;
 
     //Defines offsets, which will be used when entering new room.

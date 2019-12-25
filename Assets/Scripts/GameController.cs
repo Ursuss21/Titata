@@ -7,10 +7,11 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
-    private static int health = 10;
-    private static int maxHealth = 10;
+    private static int health = 6;
+    private static int maxHealth = 6;
     private static float moveSpeed = 5;
     private static float fireRate = 0.5f;
+    private static bool dead = false;
 
     public static int Health{
         get => health;
@@ -44,7 +45,9 @@ public class GameController : MonoBehaviour
     }
 
     public static void DamagePlayer(int damage){
-        health -= damage;
+        if(!dead){
+            health -= damage;
+        }
         if(Health <= 0){
             KillPlayer();
         }
@@ -56,6 +59,6 @@ public class GameController : MonoBehaviour
     }
 
     private static void KillPlayer(){
-
+        dead = true;
     }
 }
