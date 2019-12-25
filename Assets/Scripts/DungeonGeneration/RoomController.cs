@@ -91,14 +91,13 @@ public class RoomController : MonoBehaviour
     //Randomly generated positions for special rooms. Special room can neighbour only one normal room.
     Room SpecialRoomPosition(){
         Room tempRoom = null;
-        GameObject tempGameObject = new GameObject("tempRoom");
+        GameObject tempGameObject = new GameObject();
         int variant;
         while(tempRoom == null){
             variant = Random.Range(0, 4);
             foreach(Room room in loadedRooms){
                 if(variant == 0 && room.GetTop()== null && room.name.Contains("Empty")){
                     if(FindRoom(room.x, room.y + 2) == null && FindRoom(room.x - 1, room.y + 1) == null && FindRoom(room.x + 1, room.y + 1) == null){
-                        //tempRoom = new Room(room.x, room.y + 1);
                         tempRoom = tempGameObject.AddComponent<Room>();
                         tempRoom.x = room.x;
                         tempRoom.y = room.y + 1;
@@ -107,7 +106,6 @@ public class RoomController : MonoBehaviour
                 }
                 else if(variant == 1 && room.GetRight()== null && room.name.Contains("Empty")){
                     if(FindRoom(room.x + 2, room.y) == null && FindRoom(room.x + 1, room.y + 1) == null && FindRoom(room.x + 1, room.y - 1) == null){
-                        //tempRoom = new Room(room.x + 1, room.y);
                         tempRoom = tempGameObject.AddComponent<Room>();
                         tempRoom.x = room.x + 1;
                         tempRoom.y = room.y;
@@ -116,7 +114,6 @@ public class RoomController : MonoBehaviour
                 }
                 else if(variant == 2 && room.GetBottom()== null && room.name.Contains("Empty")){
                     if(FindRoom(room.x, room.y - 2) == null && FindRoom(room.x - 1, room.y - 1) == null && FindRoom(room.x + 1, room.y - 1) == null){
-                        //tempRoom = new Room(room.x, room.y - 1);
                         tempRoom = tempGameObject.AddComponent<Room>();
                         tempRoom.x = room.x;
                         tempRoom.y = room.y - 1;
@@ -125,7 +122,6 @@ public class RoomController : MonoBehaviour
                 }
                 if(variant == 3 && room.GetLeft()== null && room.name.Contains("Empty")){
                     if(FindRoom(room.x - 2, room.y) == null && FindRoom(room.x - 1, room.y + 1) == null && FindRoom(room.x - 1, room.y - 1) == null){
-                        //tempRoom = new Room(room.x - 1, room.y);
                         tempRoom = tempGameObject.AddComponent<Room>();
                         tempRoom.x = room.x - 1;
                         tempRoom.y = room.y;
