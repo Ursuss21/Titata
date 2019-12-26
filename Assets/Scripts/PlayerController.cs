@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     //Updates player position based on input.
     void Update()
     {
+        fireDelay = GameController.FireRate;
+        speed = GameController.MoveSpeed;
+        
         float horizontal = Input.GetAxis("MoveHorizontal");
         float vertical = Input.GetAxis("MoveVertical");
 
